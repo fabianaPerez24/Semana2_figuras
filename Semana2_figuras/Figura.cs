@@ -41,13 +41,36 @@ namespace Semana2_figuras
                         break;
 
                     case "TRIANGULO":
+
+                        float alturaT, largoT;
+
+                        Console.WriteLine("Ingrese la primera variable");
+                        alturaT = float.Parse(Console.ReadLine());
+                        Console.WriteLine("Ingrese la segunda variable");
+                        largoT = float.Parse(Console.ReadLine());
+                        Triangulo triangulo = new Triangulo(alturaT, largoT);
+                        Console.WriteLine($"El area es {triangulo.CalcularArea()}");
                         break;
 
                     case "CIRCULO":
+
+                        float radio;
+
+                        Console.WriteLine("Ingrese el radio");
+                        radio = float.Parse(Console.ReadLine());
+
+                        Circulo circulo = new Circulo(radio);
+                        Console.WriteLine($"El area del circulo es {circulo.CalcularArea()}");
                         break;
 
                 }
-                    
+
+                Console.WriteLine("Desea continuar? Escriba SI o NO");
+                if (Console.ReadLine() == "NO")
+                {
+                    continueflag = false;
+                }
+
             }
 
         }
